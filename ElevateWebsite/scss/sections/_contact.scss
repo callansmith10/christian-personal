@@ -1,0 +1,131 @@
+section#contact {
+  background-color: #232323;
+  min-height: 65vh;
+}
+
+#contact-form {
+  display: block;
+  justify-content: center;
+}
+
+.contact-info {
+  font-size: 16px;
+
+  h4 {
+    color: #939393;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  p {
+    color: #f9f9f9;
+    margin-bottom: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+  }
+}
+
+.section-title-contact {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+
+.contact-form-split {
+  margin: 0 30px;
+}
+
+.contact-form-controls {
+  text-align: center;
+}
+
+.contact-form-input,
+.contact-form-message {
+  margin-bottom: 35px;
+}
+
+.contact-form-input label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.contact-form-message label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.contact-form-input label .contact-form-required,
+.contact-form-message label .contact-form-required {
+  color: red;
+  font-size: 16px;
+}
+
+.contact-form-input input {
+  display: block;
+  font-size: 16px;
+  background-color: #232323;
+  height: 25px;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  color: white;
+  border-bottom: 2px solid #777777;
+  outline: none;
+  font-family: sans-serif;
+}
+
+.contact-form-message textarea {
+  display: block;
+  font-size: 16px;
+  background-color: #232323;
+  height: 266px;
+  padding: 5px;
+  width: 100%;
+  color: white;
+  border: 2px solid #777777;
+  resize: none;
+  outline: none;
+  font-family: sans-serif;
+}
+
+.contact-form-input input {
+  &:focus,
+  &:target {
+    border-color: #00e2d7;
+  }
+}
+
+.contact-form-message textarea {
+  &:focus,
+  &:target {
+    border-color: #00e2d7;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  #contact-form{
+    display: flex;
+    max-width: 100%;
+  }
+  .contact-form-input input{
+    width: 300px;
+  }
+  .contact-form-message{
+    width: 450px;
+  }
+}

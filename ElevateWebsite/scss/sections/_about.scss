@@ -1,0 +1,118 @@
+section#about {
+  background-color: #f9f9f9;
+}
+
+.about-info {
+  font-size: 16px;
+
+  h4 {
+    color: #939393;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  p {
+    color: #232323;
+    margin-bottom: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  blockquote {
+    margin-right: 5%;
+    margin-left: 10%;
+    margin-bottom: 40px;
+  }
+}
+
+.employee-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 40px 0px;
+
+  .employee-info-image {
+    width: 20%;
+    flex-shrink: 0;
+    margin-left: 40%;
+    margin-right: 40%;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+      border: 5px solid #00efd7;
+    }
+  }
+
+  .employee-info-text-container {
+    margin: 20px 20px 20px 20px;
+    color: #232323;
+  }
+
+
+  .employee-info-text-container {
+    .employee-info-name {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    .employee-info-title {
+      font-size: 20px;
+      color: #939393;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .employee-info-description {
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+}
+
+// TODO: REMOVE
+
+.row {
+  margin: 0 -5px;
+
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 0px;
+  }
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
