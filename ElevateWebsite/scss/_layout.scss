@@ -1,0 +1,33 @@
+// Flex column layout (*most common*, for column layout that starts on mobile screens)
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// Flex row with wrap (for row layout that starts on mobile screen)
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// Flex row no-wrap (for auto fitting purposes, mainly)
+.flex-row-nw {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// How to fit 2 per row
+// flex: 1 0 41%;
+
+// How to fit 3 per row
+// flex: 1 0 28%;
+
+// How to fit 4 per row
+// flex: 1 0 21%;
