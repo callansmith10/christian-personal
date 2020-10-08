@@ -3,7 +3,7 @@ Import-Module "$PSScriptRoot\..\..\Common\SpsCommon\SharePointPnPPowerShell2016"
 
 Write-Host " "
 Write-Host "---------------------------"
-$ListSite= "http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/"
+$ListSite= "REDACTED"
 $error.clear()
 
 Connect-PnPOnline -Url $ListSite -CurrentCredentials
@@ -14,7 +14,7 @@ Pulling list items where Status = In Progress
 
 ##############################>
 
-$item = Get-PnPListItem -Web "/sites/wftrc/001" -List "Auto New Site Requests" -Query "<View>
+$item = Get-PnPListItem -Web "REDACTED" -List "Auto New Site Requests" -Query "<View>
                 <Query>
                     <Where>
                         <And>
@@ -129,14 +129,14 @@ foreach($row in $item){
     $siterelativehomepage = $siterelative + "/SitePages/Home.aspx"
 
     #get full new site url
-    $newsitefullurl = 'http://teamsites.teamworks.wellsfargo.net' + $siterelative
+    $newsitefullurl = 'Redacted' + $siterelative
 
     #connect to parent site
     Connect-PnPOnline -Url $sitecollectionurl -CurrentCredentials
 
     #create new site command, enable Edit this site feature, create permsetup groups
     New-PnPWeb -Title $newsitetitle -Url $newsiteurlname -Description $newsitedescription -Locale 1033 -Template "STS#0" -BreakInheritance
-    Enable-PnPFeature -Identity 73cc8611-9ec0-4cf0-92ea-2f16eb808a86 -Web $siterelative
+    Enable-PnPFeature -Identity REDACTED -Web $siterelative
     New-PnPGroup -Title $ownersgroupname -Web $siterelative
     New-PnPGroup -Title $membersgroupname -Web $siterelative
     New-PnPGroup -Title $visitorsgroupname -Web $siterelative
@@ -177,7 +177,7 @@ foreach($row in $item){
     #set master page on new site
     Set-PnPMasterPage -MasterPageServerRelativeUrl $mpserverrelativeurl -Web $siterelative
     Remove-PnPWebPart -ServerRelativePageUrl $siterelativehomepage -Title "Get started with your site"
-    Set-PnPWebPermission -User "CA02180_UTIL_T_TST01" -RemoveRole 'Full Control' -Web $siterelative
+    Set-PnPWebPermission -User "REDACTED" -RemoveRole 'Full Control' -Web $siterelative
     Write-Host $row["Title"] " is finished."
     Connect-PnPOnline -Url $newsitefullurl -CurrentCredentials
     $web = get-pnpweb
@@ -201,24 +201,24 @@ foreach($row in $item){
         $body3 = @'
         </P> 
         <P style="FONT-FAMILY: verdana; COLOR: #44464a">Training resources and how-to guides are available on the 
-        <A href="http://portal.teamworks.wellsfargo.com/Teamworks/TeamSites/Pages/default.aspx">Team Sites Learning Resources</A> 
-        page or the&nbsp;<A href="https://solutions.sp.wellsfargo.net/sites/spcop/Communities/SPCoP">Community of Practice</A> site.
+        <A href="REDACTED">Team Sites Learning Resources</A> 
+        page or the&nbsp;<A href="REDACTED">Community of Practice</A> site.
         </P> <P style="FONT-FAMILY: verdana; COLOR: #44464a">Follow the options below to check the status of your tickets or submit a 
         new ticket. If you have questions regarding your new site or the request process, please contact us at 
-        <A href="mailto:eit.sps@wellsfargo.com">eit.sps@wellsfargo.com</A></P> 
+        <A href="mailto:eit.sps@wellsfargo.com">REDACTED</A></P> 
         <TABLE style="CURSOR: pointer; HEIGHT: 45px"> <TBODY> <TR> <TD style="OVERFLOW: hidden; CURSOR: pointer; HEIGHT: 45px; 
         BORDER-RIGHT: white 20px solid; WIDTH: 160px; VERTICAL-ALIGN: middle; TEXT-ALIGN: center; BACKGROUND-COLOR: rgb(0,115,55)">
         <A style="FONT-SIZE: 16pt; TEXT-DECORATION: none; FONT-FAMILY: verdana; COLOR: white" 
-        href="http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/Lists/autositerequests/NewForm.aspx?Source=http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/SitePages/dashboard.aspx">
+        href="REDACTED">
         <STRONG style="FONT-WEIGHT: normal">New Ticket</STRONG></A> </TD> 
         <TD style="OVERFLOW: hidden; CURSOR: pointer; HEIGHT: 45px; WIDTH: 160px; VERTICAL-ALIGN: middle; TEXT-ALIGN: center; BACKGROUND-COLOR: rgb(0,105,140)">
-        <A style="FONT-SIZE: 16pt; TEXT-DECORATION: none; FONT-FAMILY: verdana; COLOR: white" href="http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/SitePages/dashboard.aspx">
+        <A style="FONT-SIZE: 16pt; TEXT-DECORATION: none; FONT-FAMILY: verdana; COLOR: white" href="REDACTED">
         <STRONG style="FONT-WEIGHT: normal">Dashboard</STRONG></A> </TD></TR></TBODY></TABLE></DIV></DIV></BODY></HTML>
 '@
 $body = $body1 + $FullName + $body2 + $newsitefullurl + $body3
-$eitmailbox = 'EIT SPS <eit.sps@wellsfargo.com>'
+$eitmailbox = 'EIT SPS <REDACTED>'
 
-Send-MailMessage -From $eitmailbox -To $owneremail -Subject 'New Site Request Completed' -Body $body -BodyAsHtml -SmtpServer 'SMTP.AZURE.WELLSFARGO.NET'
+Send-MailMessage -From $eitmailbox -To $owneremail -Subject 'New Site Request Completed' -Body $body -BodyAsHtml -SmtpServer 'REDACTED'
     }
 }
 
