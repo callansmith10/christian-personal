@@ -9,7 +9,7 @@ foreach ($site in $sitestoread){
                 write-host $sub.ServerRelativeUrl " has unique role assignments - not set to read"
             }
             else{
-                $fullSubUrl = "http://teamsites.teamworks.wellsfargo.net" + $sub.ServerRelativeUrl
+                $fullSubUrl = "REDACTED" + $sub.ServerRelativeUrl
                 Write-Host $fullSubUrl " is inheriting permissions"
                 Connect-PnPOnline -Url $fullSubUrl -CurrentCredentials
                 $subconnection = Get-PnPWeb -Includes HasUniqueRoleAssignments, RequestAccessEmail
@@ -53,7 +53,7 @@ foreach ($site in $sitestoread){
     $connection.Update()
     $connection.Context.ExecuteQuery()
 
-    Set-PnPWebPermission -User "christian.smith@wellsfargo.com" -RemoveRole 'Full Control'
+    Set-PnPWebPermission -User "redacted" -RemoveRole 'Full Control'
 
     Write-Host $site.url " has been set to read."
 }
