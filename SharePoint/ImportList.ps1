@@ -1,6 +1,6 @@
 #Credentials and site variables used in connect-pnponline command
 $Credentials = Get-Credential
-$Site= "http://teamsites.teamworks.wellsfargo.net/sites/cb-032/005"
+$Site= "REDACTED"
 Connect-PnPOnline -Url $Site -Credentials $credentials
 
 #ImportList
