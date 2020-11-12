@@ -1,4 +1,4 @@
-$sussite = "http://solutions.entshpt.wellsfargo.net/sites/wftrc/"
+$sussite = "redacted"
 
 Connect-PnPOnline -Url $sussite -CurrentCredentials
 
@@ -60,4 +60,4 @@ foreach($row in $item){
     Set-PnPPropertyBagValue -Key tmp_additionalsiteowners -Value $tmpsecondaryownervalue
     Connect-PnPOnline -Url $sussite -Credentials $credentials
 }
-$keyword = '[{"name":"Teamsite","id":"1a477740-660c-4486-b386-8b8ce38587e5"}]'
+$keyword = '[{"name":"Teamsite","id":"redacted"}]'
