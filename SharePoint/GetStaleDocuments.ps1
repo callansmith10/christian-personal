@@ -1,5 +1,5 @@
 <#
-$SiteURL= 'http://teamsites.teamworks.wellsfargo.net/sites/cb-032/005'
+$SiteURL= 'REDACTED'
   
 #Connect to PnP Online
 Write-Host "Scanning" $ListName
@@ -93,10 +93,10 @@ Function Get-SPStaleDocs()
 #Call the function to set version history limit
 $result = @()
 $exportto = "C:\Users\u753693\Desktop\AutoStaleDocuments.csv"
-$ListSite = "http://teamsites.teamworks.wellsfargo.net/sites/cb-032/005/"
-$eitmailbox = 'EIT SPS <eit.sps@wellsfargo.com>'
+$ListSite = "REDACTED"
+$eitmailbox = 'EIT SPS <REDACTED>'
 Connect-PnPOnline -Url $ListSite -CurrentCredentials
-$listsiteitems = Get-PnPListItem -Web "/sites/cb-032/005" -List "StaleAutomation" -Query "<View>
+$listsiteitems = Get-PnPListItem -Web "REDACTED" -List "StaleAutomation" -Query "<View>
                 <Query>
                     <Where>
                         <Eq>
@@ -126,20 +126,20 @@ foreach($row in $listsiteitems){
     $body3 = @'
     </P> 
     <P style="FONT-FAMILY: verdana; COLOR: #44464a">Training resources and how-to guides are available on the 
-    <A href="http://portal.teamworks.wellsfargo.com/Teamworks/TeamSites/Pages/default.aspx">Team Sites Learning Resources</A> 
-    page or the&nbsp;<A href="https://solutions.sp.wellsfargo.net/sites/spcop/Communities/SPCoP">Community of Practice</A> site.
+    <A href="REDACTED">Team Sites Learning Resources</A> 
+    page or the&nbsp;<A href="REDACTED">Community of Practice</A> site.
     </P> <P style="FONT-FAMILY: verdana; COLOR: #44464a">Follow the options below to check the status of your tickets or submit a 
     new ticket. If you have questions regarding your stale content report or the request process, please contact us at 
-    <A href="mailto:eit.sps@wellsfargo.com">eit.sps@wellsfargo.com</A></P> 
+    <A href="mailto:REDACTED">REDACTED/A></P> 
     <TABLE style="CURSOR: pointer; HEIGHT: 45px"> <TBODY> <TR> <TD style="OVERFLOW: hidden; CURSOR: pointer; HEIGHT: 45px; 
     BORDER-RIGHT: white 20px solid; WIDTH: 160px; VERTICAL-ALIGN: middle; TEXT-ALIGN: center; BACKGROUND-COLOR: rgb(0,115,55)">
     <A style="FONT-SIZE: 16pt; TEXT-DECORATION: none; FONT-FAMILY: verdana; COLOR: white" 
-    href="http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/Lists/autositerequests/NewForm.aspx?Source=http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/SitePages/dashboard.aspx">
+    href="REDACTED">
     <STRONG style="FONT-WEIGHT: normal">New Ticket</STRONG></A> </TD> 
     <TD style="OVERFLOW: hidden; CURSOR: pointer; HEIGHT: 45px; WIDTH: 160px; VERTICAL-ALIGN: middle; TEXT-ALIGN: center; BACKGROUND-COLOR: rgb(0,105,140)">
-    <A style="FONT-SIZE: 16pt; TEXT-DECORATION: none; FONT-FAMILY: verdana; COLOR: white" href="http://solutions.entshpt.wellsfargo.net/sites/wftrc/001/SitePages/dashboard.aspx">
+    <A style="FONT-SIZE: 16pt; TEXT-DECORATION: none; FONT-FAMILY: verdana; COLOR: white" href="REDACTED">
     <STRONG style="FONT-WEIGHT: normal">Dashboard</STRONG></A> </TD></TR></TBODY></TABLE></DIV></DIV></BODY></HTML>
 '@
 $body = $body1 + $body2 + $body3
-    Send-MailMessage -Attachments $exportto -From $eitmailbox -To $requester -Subject 'SharePoint Stale Content Report' -Body $body -BodyAsHtml -SmtpServer 'SMTP.AZURE.WELLSFARGO.NET'
+    Send-MailMessage -Attachments $exportto -From $eitmailbox -To $requester -Subject 'SharePoint Stale Content Report' -Body $body -BodyAsHtml -SmtpServer 'REDACTED'
 }
