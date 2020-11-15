@@ -1,0 +1,8 @@
+Hits,RBI,AVG,R,K,2b,HR,W
+HRVToday,RecToday,RecToday,RecToday,RHRToday,SEToday,RecToday,
+HiBtoday,HRVToday,RHRToday,RHRToday,REMSleepToday,,RHRToday,
+,Disturbances,HRVToday,SlowWaveToday,,,HRVToday,
+,,HoSToday,,,,SPToday,
+,,LightSleepToday,,,,SlowWaveToday,
+,,SlowWaveToday,,,,Disturbances,
+,,Disturbances,,,,SleepDebt,
